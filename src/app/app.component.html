@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Weather Today</title>
+</head>
+<body>
+  <div class="container-fluid-sm p-4 text-center bg-info text-white justify-content">
+    <h1 class="display-2">{{title}}</h1>
+  </div>
+  <ul class="navbar navbar-dark bg-dark justify-content-between">
+    <button routerLink="/weather" (click)="setVisible=false"  type="button" class="btn float-left text-white"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+    <button routerLink="/settings" (click)="setVisible=false" type="button" class="btn float-right text-white"><i class="fa fa-gear" aria-hidden="true"></i> Settings</button>
+  </ul>
+  <p *ngIf="setVisible">
+  <app-weather></app-weather>
+  </p>
+  <p *ngIf="!setVisible">
+  <router-outlet></router-outlet>
+  </p>
+</body>
+</html>
