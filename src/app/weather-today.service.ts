@@ -16,6 +16,9 @@ export class WeatherTodayService {
   public unit;
 
   public setCityList(city){
+    if(localStorage.getItem("count")==null){
+      localStorage.setItem("count","0");
+    }
     this.count=parseInt(localStorage.getItem("count"));
     localStorage.setItem(`${this.count}`,city);
     this.count+=1;
